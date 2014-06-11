@@ -1,5 +1,5 @@
 ruby '2.1.1'
-#ruby-gemset=rememberme
+#ruby-gemset=squmblr
 source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 4.0.0'
@@ -15,4 +15,9 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development do
   gem 'spring'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rspec'
 end
