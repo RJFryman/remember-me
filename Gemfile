@@ -3,6 +3,7 @@ ruby '2.1.1'
 source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 4.0.0'
+gem 'decent_exposure'
 gem 'devise'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
