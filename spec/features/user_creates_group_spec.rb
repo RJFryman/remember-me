@@ -2,12 +2,14 @@ require 'spec_helper'
 
 feature "New Groups" do
   scenario "user creates a new group" do
-    login_as Fabricate(:user)
+    login_as Fabricate(:user, username: "RJF")
     click_link "Create a group"
     fill_in "Name", with: "Test-Group"
     click_button "Create Group"
     page.should have_content "Group successfully created."
     page.should have_content "Test-Group"
+    page.should have_content "Members:"
+    page.should have_content "RJF"
   end
 
   scenario "failed group creation no name" do

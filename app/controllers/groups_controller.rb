@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
 
   def create
     if group.save
+      current_user.groups << group
       redirect_to group_path(group), notice: "Group successfully created."
     else
       flash.alert = "Your group couldn't be created."

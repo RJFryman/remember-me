@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe Group do
   it { should validate_uniqueness_of :name }
+  it { should have_many :users }
 
   describe 'name' do
     it { should allow_value('testgroup').for(:name) }

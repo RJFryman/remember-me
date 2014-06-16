@@ -3,6 +3,7 @@ require 'spec_helper'
 describe User do
   it { should validate_uniqueness_of :username }
   it { should validate_uniqueness_of :email }
+  it { should have_many :groups }
 
   describe 'username' do
     it { should allow_value('robert').for(:username) }

@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
                            format: { with: /\A[a-zA-Z0-9]+\z/, message: "username can only contain letters or numbers without spaces."}
   validates_presence_of :email
 
+  has_many :memberships
+  has_many :groups, through: :memberships
+
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
