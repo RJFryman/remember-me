@@ -2,5 +2,5 @@
 
 %h3 Members:
 
-- group.users.each do |u|
-  %p= u.username
+- group.users.each do |user|
+  %li= link_to user.username, user

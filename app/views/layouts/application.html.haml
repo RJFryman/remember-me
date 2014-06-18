@@ -10,6 +10,7 @@
       %ul.devise_navigation
         - if user_signed_in?
           %li= link_to 'Create a group', new_group_path
+          %li= link_to 'My Profile', user_path(current_user)
           %li= link_to 'Sign out', destroy_user_session_path, method: 'delete'
         - else
           %li= link_to 'Sign in', new_user_session_path

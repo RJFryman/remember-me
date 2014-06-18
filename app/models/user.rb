@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :rememberable,:recoverable, :trackable, :validatable
   validates :username, uniqueness: true,
                            format: { with: /\A[a-zA-Z0-9]+\z/, message: "username can only contain letters or numbers without spaces."}
-  validates_presence_of :email
+  validates_format_of :email, with: /\A[^@]+@[^@]+\z/, message: "must be an email address"
 
   has_many :memberships
   has_many :groups, through: :memberships

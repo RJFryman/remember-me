@@ -12,4 +12,11 @@ describe User do
     it { should_not allow_value('#!@#$%^').for(:username) }
     it { should_not allow_value('@robert').for(:username) }
   end
+  describe 'email' do
+    it { should allow_value('robert@example.com').for(:email) }
+    it { should_not allow_value('robertexample.com').for(:email) }
+    it { should_not allow_value('@robertexample.com').for(:email) }
+    it { should_not allow_value('robert@').for(:email) }
+  end
 end
+
