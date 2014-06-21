@@ -2,4 +2,12 @@
 
 = simple_form_for group do |f|
   = f.input :name
+  = f.input :description
+  = f.input :phone, as: :boolean
+  = f.input :email, as: :boolean
+  = f.input :website, as: :boolean
+  = f.input :address, as: :boolean
+  = f.input :city, as: :boolean
+  = f.input :state, as: :boolean
+  = f.input :zip, as: :boolean
   = f.button :submit, "Create Group"
