@@ -2,6 +2,7 @@
 
 = simple_form_for group do |f|
   = f.input :name
+  = f.input :invitation_code, label: "Invitation Code"
   = f.input :description
   = f.input :phone, as: :boolean
   = f.input :email, as: :boolean

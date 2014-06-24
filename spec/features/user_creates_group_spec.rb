@@ -5,6 +5,7 @@ feature "New Groups" do
     login_as Fabricate(:user, name: "Robert", phone:"123-456-7890", email:"robert@example.com")
     click_link "Create a group"
     fill_in "Name", with: "Test-Group"
+    fill_in "Invitation Code", with: "512asfT5"
     check "Phone"
     check "Email"
     click_button "Create Group"
@@ -35,12 +36,13 @@ feature "New Groups" do
   end
 
   scenario "failed group create name used" do
-    Fabricate(:group, name: "Test Group")
+    Fabricate(:group, name: "Test Group", invitation_code: "1")
     login_as Fabricate(:user)
     click_link "Create a group"
     fill_in "Name", with: "Test Group"
+    fill_in "Invitation Code", with: "1"
     click_button "Create Group"
     page.should have_content "Your group couldn't be created."
-    page.should have_error "has already been taken", on: "Name"
+    page.should have_error "has already been taken", on: "Invitation Code"
   end
 end

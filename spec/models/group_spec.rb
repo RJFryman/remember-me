@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Group do
-  it { should validate_uniqueness_of :name }
+  it { should validate_uniqueness_of :invitation_code }
   it { should have_many :users }
 
   describe 'name' do

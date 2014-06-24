@@ -10,7 +10,7 @@
       %ul.devise_navigation
         - if user_signed_in?
           %li= link_to 'Create a group', new_group_path
-          %li= link_to 'Join a Group', '#'
+          %li= link_to 'Join a Group', new_group_membership_path
           %li= link_to 'My Groups', groups_path
           %li= link_to 'My Contacts', users_path
           %li= link_to 'My Profile', user_path(current_user)

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 feature "User Profile Views" do
-  let(:group1){ Fabricate(:group, name: "Test Group 1", phone: true) }
-  let(:group2){ Fabricate(:group, name: "Test Group 2", email: true) }
-  let(:group3){ Fabricate(:group, name: "Test Group 3", website: true) }
+  let(:group1){ Fabricate(:group, name: "Test Group 1", phone: true, invitation_code: "1") }
+  let(:group2){ Fabricate(:group, name: "Test Group 2", email: true, invitation_code: "2") }
+  let(:group3){ Fabricate(:group, name: "Test Group 3", website: true, invitation_code: "3") }
 
   scenario "Viewing a user with multiple permissions from different groups" do
     robert = Fabricate(:user, name: "Robert", phone: "123-456-7890", email: "rob@example.com", website: "robert.com", groups: [group1, group2, group3])
