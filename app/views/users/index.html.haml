@@ -1,0 +1,7 @@
+- list = []
+-current_user.groups.each do |group|
+  - group.users.each do |user|
+    - list << user
+- list.uniq!
+- list.each do |user|
+  %li= link_to user.name, user
