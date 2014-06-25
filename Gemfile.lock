@@ -55,6 +55,7 @@ GEM
     erubis (2.7.0)
     execjs (2.0.2)
     fabrication (2.11.2)
+    gravtastic (3.2.6)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -184,6 +185,7 @@ DEPENDENCIES
   decent_exposure
   devise
   fabrication
+  gravtastic
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
