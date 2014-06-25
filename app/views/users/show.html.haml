@@ -12,6 +12,18 @@
       -if user.website
         = link_to("#{user.website}", "http://"+user.website)
     %li
+      Company:
+      = user.company
+    %li
+      Twitter:
+      = user.twitter
+    %li
+      Linkedin:
+      = user.linkedin
+    %li
+      Github:
+      = user.github
+    %li
       Address:
       = user.address
     %li
