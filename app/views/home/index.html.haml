@@ -1,6 +1,7 @@
 .home
   %h1 Remember Me
-  %h2 It's the new way to do contact management.
 
   - unless user_signed_in?
     = link_to "Start Remembering!", new_user_registration_path
+
+  %h2 It's the new way to do contact management.
