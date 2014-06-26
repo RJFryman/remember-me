@@ -1,7 +1,6 @@
 %h1 Join a Group
-
 =form_tag group_memberships_path, method: 'post' do
   =label_tag :invitation_code, 'Invitation Code'
   =text_field_tag(:invitation_code)
-  =submit_tag "Join a Group"
-
+  .gm
+    =submit_tag "Join a Group"

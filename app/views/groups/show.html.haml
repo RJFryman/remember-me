@@ -1,63 +1,64 @@
-%h1= group.name
+.gi
+  %h1= group.name
+  %h2 Group Code: #{group.invitation_code}
+  %h3 Group Description: #{group.description}
 
-%h2= group.description
-%h2= group.invitation_code
+  %h4 Members:
 
-%h3 Members:
-
-- list = []
--group.users.each do |user|
-  %li= link_to user.name, user
-  - group.attributes.each do |key, value|
-    -if value == true
-      -list << key
-      -list.uniq!
-  %ul
-    -if list.include? 'email'
-      %li
-        Email:
-        = mail_to(user.email)
-    -if list.include? 'phone'
-      %li
-        Phone:
-        = user.phone
-    -if list.include? 'website'
-      %li
-        Website:
-        -if user.website
-          = link_to("#{user.website}", "http://"+user.website)
-    -if list.include? 'company'
-      %li
-        Company:
-        = user.company
-    -if list.include? 'twitter'
-      %li
-        Twitter:
-        -if user.twitter
-          = link_to('@'+"#{user.twitter}", 'https://twitter.com/'+user.twitter)
-    -if list.include? 'linkedin'
-      %li
-        Linkedin:
-        -if user.linkedin
-          = link_to("#{user.name}"+'\'s Linkedin', "#{user.linkedin}")
-    -if list.include? 'github'
-      %li
-        Github:
-        -if user.github
-          = link_to("#{user.github}",'https://github.com/'+user.github)
-    -if list.include? 'address'
-      %li
-        Address:
-        = user.address
-    -if list.include? 'city'
-      %li
-        City:
-        = user.city
-    -if list.include? 'state'
-      %li
-        State:
-        = user.state
-    -if list.include? 'zip'
-      %li
-        Zip:
-        = user.zip
+  - list = []
+  -group.users.each do |user|
+    - group.attributes.each do |key, value|
+      -if value == true
+        -list << key
+        -list.uniq!
+    %ul.user
+      %li= link_to user.name, user
+      %li= image_tag user.gravatar_url
+      -if list.include? 'email'
+        %li
+          Email:
+          = mail_to(user.email)
+      -if list.include? 'phone'
+        %li
+          Phone:
+          = user.phone
+      -if list.include? 'website'
+        %li
+          Website:
+          -if user.website
+            = link_to("#{user.website}", "http://"+user.website)
+      -if list.include? 'company'
+        %li
+          Company:
+          = user.company
+      -if list.include? 'twitter'
+        %li
+          Twitter:
+          -if user.twitter
+            = link_to('@'+"#{user.twitter}", 'https://twitter.com/'+user.twitter)
+      -if list.include? 'linkedin'
+        %li
+          Linkedin:
+          -if user.linkedin
+            = link_to("#{user.name}"+'\'s Linkedin', "#{user.linkedin}")
+      -if list.include? 'github'
+        %li
+          Github:
+          -if user.github
+            = link_to("#{user.github}",'https://github.com/'+user.github)
+      -if list.include? 'address'
+        %li
+          Address:
+          = user.address
+      -if list.include? 'city'
+        %li
+          City:
+          = user.city
+      -if list.include? 'state'
+        %li
+          State:
+          = user.state
+      -if list.include? 'zip'
+        %li
+          Zip:
+          = user.zip

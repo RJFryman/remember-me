@@ -8,6 +8,8 @@
   %body
     #header
       %ul.devise_navigation
+        %h1#title= link_to 'Remember Me', root_path
+        %h1#raven= image_tag "Raven_on_Red.png"
         - if user_signed_in?
           %li= link_to 'Create a group', new_group_path
           %li= link_to 'Join a Group', new_group_membership_path
@@ -18,7 +20,7 @@
         - else
           %li= link_to 'Sign in', new_user_session_path
           %li= link_to 'Sign up', new_user_registration_path
-    %h1#raven= image_tag "Raven_on_Red.png"
+
     #content
       .alert= alert
       .notice= notice

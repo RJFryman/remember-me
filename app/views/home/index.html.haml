@@ -3,5 +3,7 @@
 
   - unless user_signed_in?
     = link_to "Start Remembering!", new_user_registration_path
+  -else
+    = image_tag current_user.gravatar_url(:size => 220)
 
   %h2 It's the new way to do contact management.

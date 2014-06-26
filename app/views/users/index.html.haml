@@ -1,8 +1,11 @@
 %h1 My Contacts
-- list = []
--current_user.groups.each do |group|
-  - group.users.each do |user|
-    - list << user
-- list.uniq!
-- list.each do |user|
-  %li= link_to user.name, user
+.s
+  - list = []
+  -current_user.groups.each do |group|
+    - group.users.each do |user|
+      - list << user
+  - list.uniq!
+  - list.each do |user|
+    .u
+      %li= link_to user.name, user
+      = image_tag user.gravatar_url

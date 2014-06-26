@@ -1,15 +1,16 @@
 %h2 Edit Your Profile
-= simple_form_for current_user do |f|
-  = f.input :email
-  = f.input :name
-  = f.input :phone
-  = f.input :website
-  = f.input :company
-  = f.input :twitter
-  = f.input :linkedin
-  = f.input :github
-  = f.input :address
-  = f.input :city
-  = f.input :state
-  = f.input :zip
-  = f.button :submit, "Save Changes"
+.n
+  = simple_form_for current_user do |f|
+    = f.input :email
+    = f.input :name
+    = f.input :phone
+    = f.input :website
+    = f.input :company
+    = f.input :twitter
+    = f.input :linkedin
+    = f.input :github
+    = f.input :address
+    = f.input :city
+    = f.input :state
+    = f.input :zip
+    = f.button :submit, "Save Changes"

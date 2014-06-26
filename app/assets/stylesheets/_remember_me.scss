@@ -1,9 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Philosopher);
+@import url(http://fonts.googleapis.com/css?family=Kaushan+Script);
+@import url(http://fonts.googleapis.com/css?family=Patua+One);
 $primary-background: #F4D8C3;
 $main-blue: #489CC0;
 $secondary-background: #4E5158;
 $main-yellow: #F2B707;
 $important-red: #BF2824;
 
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Patua One', cursive;
+}
+body{
+  font-family: 'Philosopher', sans-serif;
+}
 #header {
   background: $secondary-background;
   padding-top: 70px;
@@ -19,22 +28,137 @@ $important-red: #BF2824;
       a {
         color: $main-blue;
         text-decoration:none;
+        margin: 10px;
       }
     }
   }
 }
+.gm{
+  input{
+    display: block;
+    padding: 7px;
+    background-color: $main-yellow;
+    border: none;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 40px 40px 40px 40px;
+  }
+}
+
+.p{
+  .i{
+    margin: auto;
+    text-align: center;
+  }
+  ul{
+    li{
+      margin: 5px;
+      list-style-type: none;
+      float: center;
+      text-align: center;
+    }
+  }
+  a{
+    display: block;
+    text-align: center;
+  }
+}
+.s{
+  .u{
+    margin: 5px;
+    list-style-type: none;
+    width: 30%;
+    float: left;
+    text-align: center;
+  }
+
+}
+.i{
+  li{
+    margin: 5px;
+    list-style-type: none;
+    width: 30%;
+    float: left;
+    text-align: center;
+  }
+}
+h1{
+  text-align: center;
+}
+.gi{
+  h1{
+    text-align: center;
+  }
+  h2{
+
+  }
+  h3{
+
+  }
+  h4{
+    text-align: center;
+  }
+  ul.user{
+    width: 50%;
+    float: left;
+    text-align: center;
+  }
+  ul{
+    li{
+      list-style-type: none;
+    }
+  }
+}
+.g{
+  .boolean{
+    display: inline;
+    margin-right: 8px;
+  }
+  .button{
+    display: block;
+    margin: 10px;
+    padding: 7px;
+    background-color: $main-yellow;
+    border: none;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 40px 40px 40px 40px;
+  }
+}
+.n{
+  padding: 30px;
+  .button{
+    margin: 10px;
+    padding: 7px;
+    background-color: $main-yellow;
+    border: none;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 40px 40px 40px 40px;
+  }
+}
+
+#title{
+  font-family: 'Kaushan Script', cursive;
+  text-align: left;
+  font-size: 2.2em;
+  position: relative;
+  left: -40px;
+  bottom: -50px;
+  width: 250px;
+  color: $important-red;
+}
 
 #content {
     background: $primary-background;
+    box-shadow: 2px 2px 5px black;
     border-radius: 40px 40px 40px 40px;
     padding: 20px 15px;
     @include grid-row();
-  }
+    margin-top: 15px;
+}
 
 #raven{
   position: absolute;
-  top: 0px;
-  left: 10px;
+  top: 50px;
+  left: 75px;
 }
 
 #header{
@@ -52,20 +176,28 @@ form{
   display:block;
 }
 .home{
+  height:450px;
+  text-align:center;
   h1{
+    font-family: 'Kaushan Script', cursive;
     text-align:center;
     color:$important-red;
-    font-size: 3em;
+    font-size: 4em;
+    margin-bottom: 25px;
   }
   h2{
     text-align:center;
-    color: $main-yellow;
+    color:$important-red;
+    position: relative;
+    top: 25px;
   }
   a{
     text-decoration:none;
     display: block;
     text-align: center;
-    font-size: 2.5em;
-    color:$important-red;
+    font-size: 2.8em;
+    margin-top: 100px;
+    margin-bottom: 125px;
+    color: $main-yellow;
   }
 }

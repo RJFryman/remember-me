@@ -1,98 +1,100 @@
-%h1= user.name
-= image_tag user.gravatar_url
--if current_user == user
-  %ul
-    %li
-      Email:
-      = mail_to(user.email)
-    %li
-      Phone:
-      = user.phone
-    %li
-      Website:
-      -if user.website
-        = link_to("#{user.website}", "http://"+user.website)
-    %li
-      Company:
-      = user.company
-    %li
-      Twitter:
-      -if user.twitter
-        = link_to('@'+"#{user.twitter}", 'https://twitter.com/'+user.twitter)
-    %li
-      Linkedin:
-      -if user.linkedin
-        = link_to("#{user.name}"+'\'s Linkedin', "#{user.linkedin}")
-    %li
-      Github:
-      -if user.github
-        = link_to("#{user.github}",'https://github.com/'+user.github)
-    %li
-      Address:
-      = user.address
-    %li
-      City:
-      = user.city
-    %li
-      State:
-      = user.state
-    %li
-      Zip:
-      = user.zip
-  = link_to "Edit My Profile", [:edit, current_user]
--else
-  - list = []
-  - (user.groups & current_user.groups).each do |group|
-    - group.attributes.each do |key, value|
-      -if value == true
-        -list << key
-        -list.uniq!
-  %ul
-    -if list.include? 'email'
+.p
+  %h1= user.name
+  .i
+    = image_tag user.gravatar_url(:size => 220)
+  -if current_user == user
+    %ul
       %li
         Email:
         = mail_to(user.email)
-    -if list.include? 'phone'
       %li
         Phone:
         = user.phone
-    -if list.include? 'website'
       %li
         Website:
         -if user.website
           = link_to("#{user.website}", "http://"+user.website)
-    -if list.include? 'company'
       %li
         Company:
         = user.company
-    -if list.include? 'twitter'
       %li
         Twitter:
         -if user.twitter
           = link_to('@'+"#{user.twitter}", 'https://twitter.com/'+user.twitter)
-    -if list.include? 'linkedin'
       %li
         Linkedin:
         -if user.linkedin
           = link_to("#{user.name}"+'\'s Linkedin', "#{user.linkedin}")
-    -if list.include? 'github'
       %li
         Github:
         -if user.github
           = link_to("#{user.github}",'https://github.com/'+user.github)
-    -if list.include? 'address'
       %li
         Address:
         = user.address
-    -if list.include? 'city'
       %li
         City:
         = user.city
-    -if list.include? 'state'
       %li
         State:
         = user.state
-    -if list.include? 'zip'
       %li
         Zip:
         = user.zip
+    = link_to "Edit My Profile", [:edit, current_user]
+  -else
+    - list = []
+    - (user.groups & current_user.groups).each do |group|
+      - group.attributes.each do |key, value|
+        -if value == true
+          -list << key
+          -list.uniq!
+    %ul
+      -if list.include? 'email'
+        %li
+          Email:
+          = mail_to(user.email)
+      -if list.include? 'phone'
+        %li
+          Phone:
+          = user.phone
+      -if list.include? 'website'
+        %li
+          Website:
+          -if user.website
+            = link_to("#{user.website}", "http://"+user.website)
+      -if list.include? 'company'
+        %li
+          Company:
+          = user.company
+      -if list.include? 'twitter'
+        %li
+          Twitter:
+          -if user.twitter
+            = link_to('@'+"#{user.twitter}", 'https://twitter.com/'+user.twitter)
+      -if list.include? 'linkedin'
+        %li
+          Linkedin:
+          -if user.linkedin
+            = link_to("#{user.name}"+'\'s Linkedin', "#{user.linkedin}")
+      -if list.include? 'github'
+        %li
+          Github:
+          -if user.github
+            = link_to("#{user.github}",'https://github.com/'+user.github)
+      -if list.include? 'address'
+        %li
+          Address:
+          = user.address
+      -if list.include? 'city'
+        %li
+          City:
+          = user.city
+      -if list.include? 'state'
+        %li
+          State:
+          = user.state
+      -if list.include? 'zip'
+        %li
+          Zip:
+          = user.zip
