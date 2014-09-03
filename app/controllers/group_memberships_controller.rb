@@ -3,7 +3,7 @@ class GroupMembershipsController < ApplicationController
 
   def create
     group = Group.where(invitation_code:params[:invitation_code])
-    if group
+    if group.exists?
       current_user.groups << group
       redirect_to group_path(current_user.groups.last), notice: "You have been added to #{current_user.groups.last.name}."
     else
