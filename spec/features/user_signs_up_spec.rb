@@ -23,7 +23,6 @@ feature "User signs up" do
     fill_in "Password confirmation", with: "notpassword"
     click_button "Sign up"
     page.should_not have_content "Welcome to Remember Me!"
-    page.should have_content "Your account could not be created."
     page.should have_error("has already been taken", on: "Email")
     page.should have_error("doesn't match Password", on: "Password confirmation")
     page.should have_error("has already been taken", on: "Username")
@@ -38,7 +37,6 @@ feature "User signs up" do
     fill_in "Password confirmation", with: "password"
     click_button "Sign up"
     page.should_not have_content "Welcome to Remember Me!"
-    page.should have_content "Your account could not be created."
     page.should have_error("username can only contain letters or numbers without spaces.", on: "Username")
   end
 
@@ -51,7 +49,6 @@ feature "User signs up" do
     fill_in "Password confirmation", with: "password"
     click_button "Sign up"
     page.should_not have_content "Welcome to Remember Me!"
-    page.should have_content "Your account could not be created."
     page.should have_error("username can only contain letters or numbers without spaces.", on: "Username")
   end
 end
