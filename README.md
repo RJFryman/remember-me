@@ -1,6 +1,9 @@
 Remember Me
 ===========
 
+[![Build Status](https://semaphoreapp.com/api/v1/projects/dc853c35-7d15-4545-9169-2f8cc0757b9c/293557/badge.png)](https://semaphoreapp.com/rjfryman/remember-me)
+[![Code Climate](https://codeclimate.com/github/RJFryman/remember-me/badges/gpa.svg)](https://codeclimate.com/github/RJFryman/remember-me)
+
 This was my final project for the Ruby on Rails portion of Nashville Software School.
 
 This is a contract management system based on groups.
